@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Comida</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Restaurante XYZ</h1>
+        <h2>Menú</h2>
+        <ul id="menu">
+            <li>
+                Pizza - $10
+                <button onclick="addToOrder('Pizza', 10)">Agregar al Pedido</button>
+            </li>
+            <li>
+                Hamburguesa - $8
+                <button onclick="addToOrder('Hamburguesa', 8)">Agregar al Pedido</button>
+            </li>
+            <li>
+                Ensalada - $7
+                <button onclick="addToOrder('Ensalada', 7)">Agregar al Pedido</button>
+            </li>
+        </ul>
+
+        <h2>Pedido</h2>
+        <ul id="orderList"></ul>
+        <button id="submitOrder" onclick="submitOrder()">Enviar Pedido</button>
+
+        <!-- Enlace al panel del dueño -->
+        <h2>Panel del Dueño</h2>
+        <a href="admin.html">Ir al panel del dueño</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
