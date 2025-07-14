@@ -1,13 +1,13 @@
-import { db } from './firebase.js';
-import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-firestore.js";
-
+// Inicializar el arreglo de pedidos
 let order = [];
 
+// Función para agregar un pedido
 function addToOrder(item, price) {
     order.push({ item, price });
     updateOrderList();
 }
 
+// Función para actualizar la lista de pedidos
 function updateOrderList() {
     const orderList = document.getElementById('orderList');
     orderList.innerHTML = '';
@@ -18,6 +18,7 @@ function updateOrderList() {
     });
 }
 
+// Función para enviar el pedido
 async function submitOrder() {
     if (order.length === 0) {
         alert('No hay pedidos para enviar.');
@@ -25,10 +26,12 @@ async function submitOrder() {
     }
 
     try {
-        await addDoc(collection(db, "orders"), {
-            items: order,
-            timestamp: new Date()
-        });
+        // Aquí debes agregar la lógica para enviar el pedido a Firebase
+        // Por ejemplo:
+        // await addDoc(collection(db, "orders"), {
+        //     items: order,
+        //     timestamp: new Date()
+        // });
         alert('Pedido enviado con éxito!');
         order = [];
         updateOrderList();
