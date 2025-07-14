@@ -2,7 +2,7 @@
 let order = [];
 
 // Función para agregar un pedido
-function addToOrder(item, price) {
+export function addToOrder(item, price) {
     order.push({ item, price });
     updateOrderList();
 }
@@ -19,7 +19,7 @@ function updateOrderList() {
 }
 
 // Función para enviar el pedido
-async function submitOrder() {
+export async function submitOrder() {
     if (order.length === 0) {
         alert('No hay pedidos para enviar.');
         return;
@@ -27,11 +27,6 @@ async function submitOrder() {
 
     try {
         // Aquí debes agregar la lógica para enviar el pedido a Firebase
-        // Por ejemplo:
-        // await addDoc(collection(db, "orders"), {
-        //     items: order,
-        //     timestamp: new Date()
-        // });
         alert('Pedido enviado con éxito!');
         order = [];
         updateOrderList();
