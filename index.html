@@ -13,26 +13,33 @@
         <ul id="menu">
             <li>
                 Pizza - $10
-                <button onclick="addToOrder('Pizza', 10)">Agregar al Pedido</button>
+                <button id="pizzaButton">Agregar al Pedido</button>
             </li>
             <li>
                 Hamburguesa - $8
-                <button onclick="addToOrder('Hamburguesa', 8)">Agregar al Pedido</button>
+                <button id="hamburguesaButton">Agregar al Pedido</button>
             </li>
             <li>
                 Ensalada - $7
-                <button onclick="addToOrder('Ensalada', 7)">Agregar al Pedido</button>
+                <button id="ensaladaButton">Agregar al Pedido</button>
             </li>
         </ul>
 
         <h2>Pedido</h2>
         <ul id="orderList"></ul>
-        <button id="submitOrder" onclick="submitOrder()">Enviar Pedido</button>
+        <button id="submitOrder">Enviar Pedido</button>
 
         <h2>Panel del Dueño</h2>
         <a href="admin.html">Ir al panel del dueño</a>
     </div>
 
-    <script type="module" src="script.js"></script>
+    <script type="module">
+        import { addToOrder, submitOrder } from './script.js';
+
+        document.getElementById('pizzaButton').onclick = () => addToOrder('Pizza', 10);
+        document.getElementById('hamburguesaButton').onclick = () => addToOrder('Hamburguesa', 8);
+        document.getElementById('ensaladaButton').onclick = () => addToOrder('Ensalada', 7);
+        document.getElementById('submitOrder').onclick = submitOrder;
+    </script>
 </body>
 </html>
